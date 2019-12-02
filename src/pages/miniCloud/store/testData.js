@@ -10,7 +10,7 @@ export default {
     }
   },
   actions: {
-    setTestDataInfo ({commit}, data) {
+    setTestDataInfo ({ commit }, data) {
       commit('SETTESTDATAINFO', data)
     }
   }

@@ -1,6 +1,6 @@
 import Vuex from 'vuex'
 import Vue from 'vue'
-import {localStoragePlugin} from './localStoragePlugin'
+import { localStoragePlugin } from './localStoragePlugin'
 
 import testData from './testData'
 

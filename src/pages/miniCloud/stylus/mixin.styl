@@ -1,0 +1,12 @@
+// bg-image($url)//默认2x图，dpr为3则使用3x图
+// // ../assets/imgs/dhl_icon_spzx_xz@2x.png
+//   // background: url('../assets/imgs/dhl_icon_spzx_wxz@2x.png') no-repeat 0 0 / contain
+//   background-image: url('../assets/imgs/'+$url+'@2x.png')
+//   @media (-webkit-min-device-pixel-ratio: 3),(-min-device-pixel-ratio: 3)
+//   background-image: url($url+"@3x.png")
+
+bg-image($url,$path='../../')
+  background: url($path+'assets/imgs/'+$url+'@2x.png') no-repeat 0 0 / contain
+  @media (-webkit-min-device-pixel-ratio: 3),(-min-device-pixel-ratio: 3)
+    background: url($path+'assets/imgs/'+$url+'@3x.png') no-repeat 0 0 / contain
+    

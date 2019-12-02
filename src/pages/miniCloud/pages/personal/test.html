@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <form method="POST" enctype="multipart/form-data" action="/Home/Upload" target="frameFile">
+    <input type="file" name="" id="">
+    <input type="text" name="" id="">
+    <button type="submit" onclick="msg()">点击提交</button>
+  </form>
+  <iframe name='frameFile' id="frameFile" style='display:none'></iframe>
+  <script>
+    console.log('form表单提交后会刷新')
+    function msg() {
+      console.log(`您于${new Date().toLocaleString()}点击了提交！`)
+    }
+  </script>
+</body>
+
+</html>
