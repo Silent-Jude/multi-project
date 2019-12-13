@@ -11,6 +11,9 @@
      <div>
       <a href="weather.html">跳转到weather页面</a>
     </div>
+    <div>
+      <a href="sudoku.html">跳转到数独sudoku页面</a>
+    </div>
     <!-- <solar/> -->
   </div>
 </template>

@@ -1,4 +1,4 @@
-(function flexible(win) {
+(function flexible (win) {
   const doc = win.document
   const docEl = doc.documentElement
   let tid
@@ -28,7 +28,7 @@
 
   docEl.setAttribute('data-dpr', dpr)
 
-  const refreshRem = function refreshRem() {
+  const refreshRem = function refreshRem () {
     let width = docEl.getBoundingClientRect().width
     if (width > 750) {
       width = 750

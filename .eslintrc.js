@@ -25,14 +25,14 @@ module.exports = {
   rules: {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0, // 禁用 debugger，仅生产环境启用。
     'vue/no-side-effects-in-computed-properties': 0,  // 不报错vue中的计算属性造成的其他属性变化的边际影响。
-    "vue/max-attributes-per-line": [2, {  // vue文件每行最大允许2个属性，
-      "singleline": 10,
-      "multiline": {
-        "max": 1,
-        "allowFirstLine": false
+    "vue/max-attributes-per-line": [2, { 
+      "singleline": 7,              // vue文件单行最大允许7个属性，
+      "multiline": {                 // vue多行文件最大允许2个属性。
+        "max": 2,
+        "allowFirstLine": true      // 是否允许首行有属性。
       }
     }],
-    "vue/html-self-closing": [2, {  // 没有内容的html标签需要变为自闭和标签。
+    "vue/html-self-closing": [0, {  // 没有内容的html标签需要变为自闭和标签。
       "html": {
         "void": "never",
         "normal": "always",
@@ -108,7 +108,7 @@ module.exports = {
     'no-extra-bind': 2,               // 禁止不必要的 .bind() 调用
     'no-extra-boolean-cast': 2,       // 禁止不必要的布尔转换
     'no-extra-parens': [2, 'functions'],  // 只在 函数表达式周围禁止不必要的圆括号
-    'no-fallthrough': 2,              // 禁止 case 语句落空，意指 switch case必须以break，return，throw来结束。
+    'no-fallthrough': 0,              // 禁止 case 语句落空，意指 switch case必须以break，return，throw来结束。
     'no-floating-decimal': 2,         // 禁止数字字面量中使用前导和末尾小数点，如果团队一直这样写.25这样的，那就改为0
     'no-func-assign': 2,              // 禁止对 function 声明的函数变量重新赋值
     'no-implied-eval': 2,             // 消除使用 setTimeout()、setInterval() 或 execScript() 时隐式的 eval()
@@ -211,7 +211,8 @@ module.exports = {
     'yoda': [2, 'never'],                         // 禁止 “Yoda” 条件出现。
     'prefer-const': 0,                            // 要求使用 const 声明那些声明后不再被修改的变量
     'object-curly-spacing': [2, 'always', {       // 强制要求花括号内有空格 
-      objectsInObjects: false                     // 禁止以对象元素开始或结尾的对象的花括号中有空格 
+      "arraysInObjects": false,                   // 不允许在以数组元素开头和/或以数组元素结尾的对象的大括号内部进行间隔
+      "objectsInObjects": false                   // 不允许以对象元素开始和/或以对象元素结尾的对象的大括号内的间距
     }],
     'array-bracket-spacing': [2, 'never']         // 禁止在数组括号内出现空格
   }

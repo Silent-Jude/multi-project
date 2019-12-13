@@ -14,6 +14,12 @@
           @click="cancel"
         >x</div>
         <p>登录</p>
+        <!-- {{ $store.state.token}}
+        {{token}}
+        <div>
+          <button @click="test1">dispatch改变</button>
+          <button @click="test2">直接state改变</button>
+        </div> -->
         <div class="logInfo">
           <div class="phone">
             <label>手机号
@@ -98,7 +104,7 @@
 import consume from './sub/Consume.vue'
 import recommend from './sub/Recommend.vue'
 import otherRecommend from './sub/otherRecommend.vue'
-
+import { mapState } from 'vuex'
 export default {
   name: 'HelloWorld',
   components: {
@@ -119,6 +125,9 @@ export default {
     }
   },
   computed: {
+    ...mapState({
+      token: state => state.token
+    }),
     islogin () {
       if (this.$store.getters.getLogInfo) {
         return true
@@ -143,6 +152,12 @@ export default {
   },
   mounted () {},
   methods: {
+    test1 () {
+      this.$store.dispatch('SetToken', 'dispatch改变')
+    },
+    test2 () {
+      this.$store.state.token = '直接改变'
+    },
     checkPhone () {
       // 显示icon
       this.showIcon = true

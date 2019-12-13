@@ -9,8 +9,8 @@ const store = new Vuex.Store({
     adminLog: false,
     currentPhone: null,
     isLogin: false,
-    recommend: []
-    // token: ''
+    recommend: [],
+    token: ''
   },
   mutations: {
     setAdminLog (state) {
@@ -34,6 +34,9 @@ const store = new Vuex.Store({
       state.recommend = arr
       // console.log('vuex里面的recommend设置完毕')
       // console.log(state.recommend)
+    },
+    setToken (state, data) {
+      state.token = data
     }
   },
   getters: {
@@ -48,6 +51,11 @@ const store = new Vuex.Store({
     },
     getRecommend (state) {
       return state.recommend
+    }
+  },
+  actions: {
+    SetToken ({ commit }, data) {
+      commit('setToken', data)
     }
   }
 })

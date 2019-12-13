@@ -57,7 +57,11 @@
       </div>
     </div>
     <!-- 时间选择滑动选择组件 -->
-    <mt-datetime-picker v-model="dateValue" type="date" ref="datePicker" year-format="{value} 年" month-format="{value} 月" date-format="{value} 日" :endDate="new Date()" @confirm="handleConfirm"/>
+    <mt-datetime-picker v-model="dateValue" type="date"
+      ref="datePicker" year-format="{value} 年"
+      month-format="{value} 月" date-format="{value} 日"
+      :endDate="new Date()"
+      @confirm="handleConfirm"/>
 
     <!-- 柱状图组件 -->
     <div id="monthChart" :style="{width: '6.68rem', height: '7.8rem'}"/>
